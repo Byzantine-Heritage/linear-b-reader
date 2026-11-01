@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" aria-hidden="true" focusable="false">
+          <defs>
+            <path id="lb-tablet-edge" d="M10 38 L43 14 L86 12 L124 9 L180 12 L235 13 L283 9 L332 5 L390 11 L454 17 L475 42 L471 73 L466 121 L477 157 L427 168 L367 164 L305 162 L258 167 L208 173 L151 167 L97 162 L27 168 L3 140 L14 87 L8 65 Z" />
+            <clipPath id="lb-tablet-clip"><use href="#lb-tablet-edge" /></clipPath>
+            <pattern id="lb-engraving-hatch" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(32)">
+              <path d="M0 0 V4" fill="none" stroke="#171717" stroke-width=".65" />
+            </pattern>
+            <pattern id="lb-engraving-cross" width="5" height="5" patternUnits="userSpaceOnUse">
+              <path d="M0 5 L5 0 M-1 1 L1 -1 M4 6 L6 4" fill="none" stroke="#171717" stroke-width=".5" />
+            </pattern>
+          </defs>
+          <use href="#lb-tablet-edge" fill="#fff" stroke="#171717" stroke-width="1.5" stroke-linejoin="round" />
+          <g clip-path="url(#lb-tablet-clip)">
+            <path d="M-1 35 L42 13 L124 9 L180 12 L235 13 L332 5 L454 17 L476 42 L464 42 L447 27 L331 16 L235 22 L123 20 L47 24 L19 44 L22 80 L12 140 L34 157 L98 151 L207 162 L305 151 L427 157 L463 147 L477 157 L427 168 L305 162 L208 173 L97 162 L27 168 L3 140 L14 87 L8 65 Z" fill="url(#lb-engraving-hatch)" />
+            <path d="M453 17 L475 42 L471 73 L466 121 L477 157 L455 150 L453 129 L462 76 L465 45 Z" fill="url(#lb-engraving-cross)" />
+            <g fill="none" stroke="#171717" stroke-width=".7" stroke-linecap="round">
+              <path d="M20 40 L47 23 L84 21 M89 21 L124 19 L178 20 M288 18 L330 15 L392 21 M400 22 L447 27 L464 44" />
+              <path d="M14 139 L33 157 L95 151 M101 152 L152 158 L208 163 L260 157 M266 158 L307 152 L365 155 L427 158 L462 148" />
+              <path d="M25 45 L22 62 M27 49 L25 66 M30 55 L28 69 M33 61 L31 72 M38 65 L36 76" />
+              <path d="M445 100 L448 82 M449 104 L453 80 M452 111 L457 90 M456 115 L459 98" />
+              <path d="M48 142 L58 139 M53 146 L67 142 M67 146 L76 143 M368 143 L381 145 M376 138 L389 141 M390 144 L405 147" />
+              <path d="M79 35 L86 33 M92 31 L103 30 M349 29 L359 31 M365 32 L370 33" />
+              <path d="M26 116 L31 113 M29 122 L33 118 M431 52 L438 56 M434 48 L441 53" />
+            </g>
+            <g fill="#171717">
+              <circle cx="58" cy="69" r=".65" /><circle cx="63" cy="74" r=".45" /><circle cx="72" cy="120" r=".6" /><circle cx="81" cy="123" r=".4" />
+              <circle cx="401" cy="61" r=".65" /><circle cx="407" cy="64" r=".4" /><circle cx="422" cy="113" r=".6" /><circle cx="415" cy="120" r=".45" />
+            </g>
+          </g>
+        </svg>
