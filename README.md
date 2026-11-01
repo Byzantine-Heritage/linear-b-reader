@@ -34,8 +34,8 @@ Unicode ideograms and Aegean numbers follow the Consortium's code charts. Only u
 
 ## GitHub source snapshot
 
-Imported from the published Sites source commit `02026b0e2763d716ebca1f62af686506f522dccf` on 1 November 2026. The existing Sites publication is independent of this GitHub repository; pushes here do not automatically redeploy it. `.openai/hosting.json` identifies the existing private Sites project and contains no credentials.
+Imported from the published Sites source commit `02026b0e2763d716ebca1f62af686506f522dccf` on 1 November 2026. The existing Sites publication is independent of this GitHub repository; pushes here do not automatically redeploy the Sites copy. GitHub Pages is published separately by the workflow below. `.openai/hosting.json` identifies the existing private Sites project and contains no credentials.
 
-Run `npm run check` with Node.js 20 or later. Run `npm run dev` with Python 3 installed and visit http://localhost:5178. No dependency installation or build step is required. `dist/` contains the authored static application and is intentionally tracked. Any static host can serve that directory. GitHub Pages is not enabled.
+Run `npm run check` with Node.js 20 or later. Run `npm run dev` with Python 3 installed and visit http://localhost:5178. No dependency installation or build step is required. `dist/` contains the authored static application and is intentionally tracked. Any static host can serve that directory. GitHub Pages publishes `dist/` at https://byzantine-heritage.github.io/linear-b-reader/. The workflow `.github/workflows/pages.yml` checks the corpus before publication on pushes to `codex/import-site`, or when run manually. Only the static site directory is deployed; research notes, tests and hosting configuration remain in the source repository.
 
 The scholarly corpus and linked publications retain their respective rights and attribution. No blanket open-source licence is asserted for third-party materials.
