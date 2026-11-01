@@ -1,5 +1,6 @@
-import {corpus} from './corpus.js?v=20261101-whole';
-import {prepare} from './text.js?v=20261101-whole';
+import {editions} from './editions.js';
+import {corpus} from './corpus.js?v=20261101-709';
+import {prepare} from './text.js?v=20261101-709';
 export const sourceURL='https://mnamon.sns.it/index.php?id=20&lang=en&page=Esempi';
 export const bibliographyURL='https://mnamon.sns.it/index.php?id=20&lang=en&page=Bibliografia';
 const legacyTablets=[
@@ -16,7 +17,7 @@ export const books=[
 export const translationPDF='https://sites.utexas.edu/scripts/wp-content/uploads/sites/3428/2020/06/2004-TGP-LinearBSources.pdf';
 export const tablets=corpus.map(raw=>{
  const d=prepare(raw),old=legacyTablets.find(x=>x.id===d.id);
- return {...d,line:old?.line||d.lines[0].label,translation:old?.translation||raw.quote||null,
+ return {...d,fullEdition:editions[d.id]||null,line:old?.line||d.lines[0].label,translation:old?.translation||raw.quote||null,
  interpretation:old?.interpretation||null,parallel:old?.parallel||null,
  translationURL:old?sourceURL:(raw.pdfPage?translationPDF+'#page='+raw.pdfPage:null),
  translationCitation:old?'Mnamon — Linear B':raw.pdfPage?`Thomas G. Palaima (2004), Linear B Sources, p. ${raw.translationPage}`:null,

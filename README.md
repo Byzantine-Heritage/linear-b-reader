@@ -24,7 +24,7 @@ Approved white plaster, burgundy, Old Standard TT and monochrome engraving. Tast
 
 ## Checks
 
-Fourteen Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
+Seventeen Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
 
 ## Argos and Argolis
 
@@ -39,3 +39,9 @@ Imported from the published Sites source commit `02026b0e2763d716ebca1f62af68650
 Run `npm run check` with Node.js 20 or later. Run `npm run dev` with Python 3 installed and visit http://localhost:5178. No dependency installation or build step is required. `dist/` contains the authored static application and is intentionally tracked. Any static host can serve that directory. GitHub Pages publishes `dist/` at https://byzantine-heritage.github.io/linear-b-reader/. The workflow `.github/workflows/pages.yml` checks the corpus before publication on pushes to `codex/import-site`, or when run manually. Only the static site directory is deployed; research notes, tests and hosting configuration remain in the source repository.
 
 The scholarly corpus and linked publications retain their respective rights and attribution. No blanket open-source licence is asserted for third-party materials.
+
+## Reading correction — 1 November 2026
+
+The sign inspector now remains in normal document flow. It scrolls away with the drawing instead of overlapping the full-width transcription and translation sections. Desktop scrolling and narrow-screen layout were checked in the browser.
+
+PY Ta 709 now includes all three numbered lines of the Greek interpretation and English translation supplied by Oleh from Mnamon. `dist/editions.js` records that provenance separately from the original short excerpts; `dist/edition-view.js` renders the line labels and scholarly superscripts safely. The main transcription remains LiBER's text, with an explicit note that its edition and Mnamon's interpretation may differ. Other tablets retain their existing verified excerpts, external links or missing-translation notices. No new interpretations were generated. The earlier 25-word excerpt limits apply to externally retrieved excerpts, not the text supplied directly by the user.

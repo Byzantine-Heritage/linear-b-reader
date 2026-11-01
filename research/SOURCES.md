@@ -53,3 +53,9 @@ https://api.pageplace.de/preview/DT0400.9780199383603_A49242860/preview-97801993
 ## Whole-document rendering
 
 Unicode Consortium code charts: https://www.unicode.org/charts/PDF/U10080.pdf (ideograms), https://www.unicode.org/charts/PDF/U10100.pdf (Aegean numbers). No chart artwork is copied. Source codes with no unambiguous mapping remain as Latin notation. Uncertain readings retain a dotted underline; brackets and insertion marks remain visible. The surface outline is an illustrative reading aid whose dimensions and line wrapping do not reproduce the artefact. Both faces of PY Tn 316 are rendered separately.
+
+## PY Ta 709 complete interpretation supplied by user — 1 November 2026
+
+Oleh supplied all three lines of Mnamon's Greek interpretation and English translation in the request. These are stored in `dist/editions.js` with `suppliedByUser: true`, source URL and citation. The attribution and superscript notation were checked against https://mnamon.sns.it/index.php?id=20&lang=en&page=Esempi (PY Ta 709 section). Only spacing and display of superscript w/VAS are normalised. No new interpretation is inferred, and no further modern translation text is taken from the website.
+
+The site's main transcription continues to follow LiBER. Mnamon's reading is a separately attributed layer; the interface notes the editorial difference instead of silently replacing one text with the other. Other records have not been assigned full interpretations without a supplied or reusable text.
