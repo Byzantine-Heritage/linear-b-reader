@@ -24,7 +24,7 @@ Approved white plaster, burgundy, Old Standard TT and monochrome engraving. Tast
 
 ## Checks
 
-Seventeen Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
+Twenty Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
 
 ## Argos and Argolis
 
@@ -45,3 +45,9 @@ The scholarly corpus and linked publications retain their respective rights and 
 The sign inspector now remains in normal document flow. It scrolls away with the drawing instead of overlapping the full-width transcription and translation sections. Desktop scrolling and narrow-screen layout were checked in the browser.
 
 PY Ta 709 now includes all three numbered lines of the Greek interpretation and English translation supplied by Oleh from Mnamon. `dist/editions.js` records that provenance separately from the original short excerpts; `dist/edition-view.js` renders the line labels and scholarly superscripts safely. The main transcription remains LiBER's text, with an explicit note that its edition and Mnamon's interpretation may differ. Other tablets retain their existing verified excerpts, external links or missing-translation notices. No new interpretations were generated. The earlier 25-word excerpt limits apply to externally retrieved excerpts, not the text supplied directly by the user.
+
+## Guided reading — 2 November 2026
+
+PY Ta 709 now offers a line-by-line comparison of LiBER transcription with the user-supplied Mnamon interpretation and English translation. Line controls are keyboard-accessible buttons. Word selection in either the drawing, full transcription or comparison updates the same selected word and URL. The comparison highlights the corresponding drawing and transcription row. Five attested spellings have bilingual reading notes; other words explicitly have no note yet. The combined reading ke-re-si-jo / we-ke and unresolved a-pe-te-me-ne remain explicit. This is not an automatically generated word-for-word alignment or a complete morphological commentary.
+
+A lexical comparison for ti-ri-po links to LSJ via Logeion, and a link to the original museum photograph allows comparison with the schematic drawing. Desktop interactions, 390px overflow, line correspondence and the legacy excerpts were checked. The guided reader is available only where both source layers exist; no missing translations were generated for other tablets.
