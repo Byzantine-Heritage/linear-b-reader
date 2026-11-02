@@ -24,7 +24,7 @@ Approved white plaster, burgundy, Old Standard TT and monochrome engraving. Tast
 
 ## Checks
 
-Twenty Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
+Twenty-three Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
 
 ## Argos and Argolis
 
@@ -51,3 +51,9 @@ PY Ta 709 now includes all three numbered lines of the Greek interpretation and 
 PY Ta 709 now offers a line-by-line comparison of LiBER transcription with the user-supplied Mnamon interpretation and English translation. Line controls are keyboard-accessible buttons. Word selection in either the drawing, full transcription or comparison updates the same selected word and URL. The comparison highlights the corresponding drawing and transcription row. Five attested spellings have bilingual reading notes; other words explicitly have no note yet. The combined reading ke-re-si-jo / we-ke and unresolved a-pe-te-me-ne remain explicit. This is not an automatically generated word-for-word alignment or a complete morphological commentary.
 
 A lexical comparison for ti-ri-po links to LSJ via Logeion, and a link to the original museum photograph allows comparison with the schematic drawing. Desktop interactions, 390px overflow, line correspondence and the legacy excerpts were checked. The guided reader is available only where both source layers exist; no missing translations were generated for other tablets.
+
+## Attributed grammatical analyses — 2 November 2026
+
+Ta 709 now separates Mnamon readings from grammatical analyses and research hypotheses. `dist/philology.js` attributes the natural dual of pu-ra-u-to-ro to Jiménez Delgado (2023), §2.1, p. 162, and the alternative readings of pa-ko-to and a-pe-te-me-ne to Palaima (2004), pp. 275–276. The latter is explicitly conditional on treating pe as an error for pu; no emendation is applied to the main text or Mnamon translation. References appear separately in Sources and beside each analysis.
+
+An 657 has an explicitly partial guided reader for its already published first-line excerpt. Selecting other lines displays their transcription and missing-layer notices instead of keeping the stale line-one translation. The full tablet remains visible. No additional modern translation has been copied or generated.

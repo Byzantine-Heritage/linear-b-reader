@@ -1,3 +1,4 @@
+import {analysisFor,scholarlySources} from './philology.js?v=20261102-grammar';
 import {renderEditionRows} from './edition-view.js';
 import {normalise} from './text.js';
 const source='https://mnamon.sns.it/index.php?id=20&lang=en&page=Esempi';
@@ -10,23 +11,27 @@ export const wordNotes={
  'we-ke':{form:'krēsiowergēs',ru:'Читается вместе с ke-re-si-jo: Mnamon даёт для сочетания одну интерпретацию krēsiowergēs. Границы слоговых последовательностей и границы интерпретируемого греческого слова здесь не совпадают.',en:'Read with ke-re-si-jo: Mnamon gives the combination one interpretation, krēsiowergēs. The boundaries of the syllabic sequences do not coincide with the interpreted Greek word.'},
  'a-pe-te-me-ne':{form:'apethmene',ru:'Mnamon предлагает форму apethmene, но в английском переводе сохраняет a-pe-te-me-ne без отдельного объяснения значения. Здесь этот термин тоже оставлен неразрешённым: интерпретированная форма сама по себе не означает, что значение установлено.',en:'Mnamon proposes apethmene but retains a-pe-te-me-ne in the English translation without a separate meaning. This reader leaves the term unresolved: an interpreted form does not by itself establish a meaning.'}
 };
-export function studyRow(d,line){return {transcript:d.lines.find(l=>l.label===line)?.text||'',interpretation:d.fullEdition?.interpretation.find(r=>r[0]===line),translation:d.fullEdition?.translation.find(r=>r[0]===line)}};
+export const readingEdition=d=>d.fullEdition||d.studyEdition;
+export function studyRow(d,line){return {transcript:d.lines.find(l=>l.label===line)?.text||'',interpretation:readingEdition(d)?.interpretation.find(r=>r[0]===line),translation:readingEdition(d)?.translation.find(r=>r[0]===line)}};
 export function renderStudy(d,language){
- if(!d.fullEdition)return '';
+ if(!readingEdition(d))return '';
  const t=copy[language];
- return `<section class="study" aria-labelledby="study-title"><h2 id="study-title">${t.title}</h2><p class="notice">${t.intro}</p><div class="line-selector" role="group" aria-label="${t.line}">${d.fullEdition.interpretation.map(([line])=>`<button type="button" data-study-line="${esc(line)}" aria-pressed="false">${t.line} ${esc(line)}</button>`).join('')}</div><div class="study-comparison"></div><p class="scope">${t.edition}</p><section class="word-commentary" aria-live="polite"></section><p class="scope"><a href="https://www.namuseum.gr/wp-content/uploads/2018/10/14352-Ta-709-712_lightbox.jpg" target="_blank" rel="noopener noreferrer">${t.original} →</a><br>${t.originalNote}</p></section>`;
+ return `<section class="study" aria-labelledby="study-title"><h2 id="study-title">${t.title}</h2><p class="notice">${t.intro}</p>${readingEdition(d).complete===false?`<p class="scope">${language==='ru'?'Проверенные интерпретация и перевод включены только для строки 1. Весь сохранившийся текст таблички дан ниже.':'Verified interpretation and translation are included for line 1 only. The complete surviving tablet text remains below.'}</p>`:''}<div class="line-selector" role="group" aria-label="${t.line}">${readingEdition(d).interpretation.map(([line])=>`<button type="button" data-study-line="${esc(line)}" aria-pressed="false">${t.line} ${esc(line)}</button>`).join('')}</div><div class="study-comparison"></div><p class="scope">${t.edition}</p><section class="word-commentary" aria-live="polite"></section>${d.id==='PY-Ta-709'?`<p class="scope"><a href="https://www.namuseum.gr/wp-content/uploads/2018/10/14352-Ta-709-712_lightbox.jpg" target="_blank" rel="noopener noreferrer">${t.original} →</a><br>${t.originalNote}</p>`:''}</section>`;
 }
+function missingLayer(language){return `<p class="scope">${language==='ru'?'Проверенный текст этого слоя для выбранной строки пока не включён.':'A verified text for this layer and selected line has not yet been included.'}</p>`;}
 export function bindStudy(d,language,onWord){
- if(!d.fullEdition)return ()=>{};
+ if(!readingEdition(d))return ()=>{};
  const t=copy[language],root=document.querySelector('.study');
  function selectLine(line,raw='',selectedIndex=-1){
-  const row=studyRow(d,line);if(!row.interpretation||!row.translation)return;
+  const row=studyRow(d,line);if(!row.transcript)return;
   root.querySelectorAll('[data-study-line]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.studyLine===line)));
   document.querySelectorAll('.drawing-line,.reading>.text-lines>.text-line').forEach(el=>el.classList.toggle('active-reading-line',(el.dataset.line||el.querySelector('.line-label')?.textContent)===line));
-  root.querySelector('.study-comparison').innerHTML=`<h3>${t.transcript}</h3><div class="edition-lines"><div class="text-line"><span class="line-label">.${esc(line)}</span><div class="line-tokens">${d.lines.find(l=>l.label===line).tokens.map(token=>token.entry?`<button type="button" class="line-word" data-study-word="${token.entry.index}" aria-pressed="${token.entry.index===selectedIndex}">${esc(token.raw)}</button>`:esc(token.raw).replaceAll('VAS','<sup>VAS</sup>')).join('')}</div></div></div><h3>${t.greek}</h3>${renderEditionRows([row.interpretation],'grc-Latn')}<h3>${t.english}</h3>${renderEditionRows([row.translation],'en')}`;
+  root.querySelector('.study-comparison').innerHTML=`<h3>${t.transcript}</h3><div class="edition-lines"><div class="text-line"><span class="line-label">.${esc(line)}</span><div class="line-tokens">${d.lines.find(l=>l.label===line).tokens.map(token=>token.entry?`<button type="button" class="line-word" data-study-word="${token.entry.index}" aria-pressed="${token.entry.index===selectedIndex}">${esc(token.raw)}</button>`:esc(token.raw).replaceAll('VAS','<sup>VAS</sup>')).join('')}</div></div></div><h3>${t.greek}</h3>${row.interpretation?renderEditionRows([row.interpretation],'grc-Latn'):missingLayer(language)}<h3>${t.english}</h3>${row.translation?renderEditionRows([row.translation],'en'):missingLayer(language)}`;
   root.querySelectorAll('[data-study-word]').forEach(b=>b.addEventListener('click',()=>onWord?.(+b.dataset.studyWord)));
-  const note=wordNotes[normalise(raw)],detail=root.querySelector('.word-commentary');
-  detail.innerHTML=raw?`<h3>${t.notes}: <i>${esc(raw)}</i></h3>${note?`<p><i lang="grc-Latn">${note.form}</i></p><p>${note[language]}</p><p class="scope"><a href="${source}" target="_blank" rel="noopener noreferrer">Mnamon · PY Ta 709 →</a>${note.url?` · <a href="${note.url}" target="_blank" rel="noopener noreferrer">${t.dictionary}: ${note.parallel} →</a>`:''}</p>`:`<p class="scope">${t.unavailable}</p>`}`:'';
+  const note=d.id==='PY-Ta-709'?wordNotes[normalise(raw)]:null,detail=root.querySelector('.word-commentary');
+  const analysis=analysisFor(d,normalise(raw)),ref=scholarlySources.find(r=>r.id===analysis?.source);
+  detail.innerHTML=raw?`<h3>${t.notes}: <i>${esc(raw)}</i></h3>${note?`<p class="reading-status">${language==='ru'?'Чтение издания · Mnamon':'Published reading · Mnamon'}</p>`:''}${note?`<p><i lang="grc-Latn">${note.form}</i></p><p>${note[language]}</p><p class="scope"><a href="${source}" target="_blank" rel="noopener noreferrer">Mnamon · PY Ta 709 →</a>${note.url?` · <a href="${note.url}" target="_blank" rel="noopener noreferrer">${t.dictionary}: ${note.parallel} →</a>`:''}</p>`:`<p class="scope">${analysis?(language==='ru'?'См. отдельный научный разбор ниже.':'See the separately attributed analysis below.'):t.unavailable}</p>`}`:'';
+  if(analysis)detail.innerHTML+=`<section class="grammar-note"><h4>${language==='ru'?(analysis.status==='analysis'?'Грамматический разбор':'Исследовательская гипотеза'):(analysis.status==='analysis'?'Grammatical analysis':'Research hypothesis')}</h4><p><i>${esc(analysis.form)}</i></p><p>${analysis[language]}</p><p class="scope"><a href="${ref.url}" target="_blank" rel="noopener noreferrer">${ref.title} →</a><br>${ref.detail}</p></section>`;
  }
  root.querySelectorAll('[data-study-line]').forEach(b=>b.addEventListener('click',()=>selectLine(b.dataset.studyLine)));
  return w=>{const e=d.entries[w];if(e)selectLine(e.line,e.raw,w)};

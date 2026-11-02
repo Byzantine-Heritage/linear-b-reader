@@ -63,3 +63,11 @@ The site's main transcription continues to follow LiBER. Mnamon's reading is a s
 ## Guided reader — 2 November 2026
 
 The line correspondence of PY Ta 709 follows the numbered lines already supplied by Oleh; the interface explicitly distinguishes LiBER's main text from Mnamon's reading. Word notes paraphrase the published forms and identify unresolved or combined readings; they do not infer missing meanings or morphological analyses. LSJ via Logeion, entry τρίπους (https://logeion.uchicago.edu/τρίπους), supplies the later Greek lexical comparison. The adjective/substantive distinction belongs to the later lexicon, not a new claim about the exact Mycenaean inflection. Mnamon's source link identifies the original photograph as https://www.namuseum.gr/wp-content/uploads/2018/10/14352-Ta-709-712_lightbox.jpg ; the image is linked externally and is not copied.
+
+## Grammar and partial coverage — 2 November 2026
+
+José Miguel Jiménez Delgado (2023), “Mycenaean Greek syntax: a diachronic perspective”, in *The Legacy of Michael Ventris*, pp. 161–187, §2.1 p. 162: pu-ra-u-to-ro is listed among thematic neuter natural duals. Author bibliography confirms 2023 (https://investigacion.us.es/sisius/sis_showpub.php?idpers=9133). The University of Seville repository's indexed full text supplies p. 162; its direct PDF fetch returns 403 in the web reader. Link: https://idus.us.es/bitstreams/f47967a0-5db7-413e-946a-52bde7842292/download#page=2 .
+
+Thomas G. Palaima (2004), “Syntax and Context as Tools for Interpreting Mycenaean Texts and Scribal Processes: Un 718, Ta 709 and K(1) 740”, pp. 268–278. Author-hosted PDF, pp. 275–276 (PDF pages 8–9), discusses competing interpretations of pa-ko-to and a-pe-te-me-ne. Only short attributed paraphrases are included. The hypothesis of a vessel lacking a base entails a proposed pe/pu error; neither LiBER nor Mnamon is silently emended. https://sites.utexas.edu/scripts/wp-content/uploads/sites/3428/2020/06/2004-TGP-SyntaxAndContextAsToolsForInterpretingMycenaeanTextsAndScribalProcesses.pdf#page=8
+
+The An 657 study edition reuses only its existing first-line Mnamon interpretation and nine-word English quotation. The other lines have explicit missing-layer states. This does not constitute a new complete translation or interpretation.

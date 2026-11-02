@@ -1,6 +1,6 @@
 import {editions} from './editions.js';
-import {corpus} from './corpus.js?v=20261102-study';
-import {prepare} from './text.js?v=20261102-study';
+import {corpus} from './corpus.js?v=20261102-grammar';
+import {prepare} from './text.js?v=20261102-grammar';
 export const sourceURL='https://mnamon.sns.it/index.php?id=20&lang=en&page=Esempi';
 export const bibliographyURL='https://mnamon.sns.it/index.php?id=20&lang=en&page=Bibliografia';
 const legacyTablets=[
@@ -17,7 +17,7 @@ export const books=[
 export const translationPDF='https://sites.utexas.edu/scripts/wp-content/uploads/sites/3428/2020/06/2004-TGP-LinearBSources.pdf';
 export const tablets=corpus.map(raw=>{
  const d=prepare(raw),old=legacyTablets.find(x=>x.id===d.id);
- return {...d,fullEdition:editions[d.id]||null,line:old?.line||d.lines[0].label,translation:old?.translation||raw.quote||null,
+ return {...d,fullEdition:editions[d.id]||null,studyEdition:d.id==='PY-An-657'?{source:sourceURL,complete:false,interpretation:[['1',old.interpretation]],translation:[['1',old.translation]]}:null,line:old?.line||d.lines[0].label,translation:old?.translation||raw.quote||null,
  interpretation:old?.interpretation||null,parallel:old?.parallel||null,
  translationURL:old?sourceURL:(raw.pdfPage?translationPDF+'#page='+raw.pdfPage:null),
  translationCitation:old?'Mnamon — Linear B':raw.pdfPage?`Thomas G. Palaima (2004), Linear B Sources, p. ${raw.translationPage}`:null,

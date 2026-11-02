@@ -1,0 +1,11 @@
+// Scholarly analyses are attributed; hypotheses do not overwrite the source text.
+export const scholarlySources=[
+ {id:'syntax2023',title:'José Miguel Jiménez Delgado — Mycenaean Greek syntax: a diachronic perspective',detail:'2023 · The Legacy of Michael Ventris, pp. 161–187; §2.1, p. 162.',url:'https://idus.us.es/bitstreams/f47967a0-5db7-413e-946a-52bde7842292/download#page=2'},
+ {id:'palaima2004',title:'Thomas G. Palaima — Syntax and Context as Tools for Interpreting Mycenaean Texts and Scribal Processes: Un 718, Ta 709 and K(1) 740',detail:'2004 · pp. 268–278; discussion of Ta 709, pp. 275–277.',url:'https://sites.utexas.edu/scripts/wp-content/uploads/sites/3428/2020/06/2004-TGP-SyntaxAndContextAsToolsForInterpretingMycenaeanTextsAndScribalProcesses.pdf#page=8'}
+];
+export const analyses={
+ 'pu-ra-u-to-ro':{status:'analysis',source:'syntax2023',form:'puraustrō',ru:'Тематическое существительное среднего рода, естественное двойственное число: парный инструмент. Разбор — по Хименесу Дельгадо, §2.1, с. 162. Грамматическое число и записанное количество предметов — разные характеристики.',en:'A thematic neuter in the natural dual, referring to a paired implement. Analysis: Jiménez Delgado, §2.1, p. 162. Grammatical number and the recorded quantity are distinct.'},
+ 'pa-ko-to':{status:'hypothesis',source:'palaima2004',form:'phaktō (?)',ru:'Палайма, с. 275–276, сопоставляет прежний разбор как двойственное число названия сосуда с иной этимологией, связанной с закреплением деталей. Выбор между ними не представлен здесь как решённый.',en:'Palaima, pp. 275–276, contrasts an earlier dual vessel-name analysis with a different etymology involving assembled parts. The alternatives are not presented here as settled.'},
+ 'a-pe-te-me-ne':{status:'hypothesis',source:'palaima2004',form:'apu-thmene (proposed)',ru:'Палайма, с. 276, обсуждает двойственное число со значением отсутствия основания у сосудов. Гипотеза требует признать pe ошибкой вместо pu; запись LiBER и перевод Mnamon здесь не исправляются.',en:'Palaima, p. 276, discusses a dual description of vessels lacking bases. This hypothesis requires treating pe as an error for pu; the LiBER text and Mnamon translation are not corrected here.'}
+};
+export function analysisFor(d,word){return d.id==='PY-Ta-709'?analyses[word]:null;}
