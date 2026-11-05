@@ -24,7 +24,7 @@ Approved white plaster, burgundy, Old Standard TT and monochrome engraving. Tast
 
 ## Checks
 
-Twenty-three Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
+Twenty-seven Node tests verify corpus provenance, preservation of all source tokens in the drawing model, glyph coverage, recto/verso separation, damage marks, numeric normalisation, unreadable fragments, legacy links and keyboard navigation. Browser checks cover all 22 document routes and their expected line/layout counts at 390px, geographic filtering, Russian text, sign selection and arrow navigation. Additional 320px and desktop checks cover the longest records. No whole-page horizontal overflow was observed.
 
 ## Argos and Argolis
 
@@ -57,3 +57,11 @@ A lexical comparison for ti-ri-po links to LSJ via Logeion, and a link to the or
 Ta 709 now separates Mnamon readings from grammatical analyses and research hypotheses. `dist/philology.js` attributes the natural dual of pu-ra-u-to-ro to Jiménez Delgado (2023), §2.1, p. 162, and the alternative readings of pa-ko-to and a-pe-te-me-ne to Palaima (2004), pp. 275–276. The latter is explicitly conditional on treating pe as an error for pu; no emendation is applied to the main text or Mnamon translation. References appear separately in Sources and beside each analysis.
 
 An 657 has an explicitly partial guided reader for its already published first-line excerpt. Selecting other lines displays their transcription and missing-layer notices instead of keeping the stale line-one translation. The full tablet remains visible. No additional modern translation has been copied or generated.
+
+## Mycenaean–Greek lexicon — 5 November 2026
+
+The `/dictionary` route contains 24 sourced entries: 17 word spellings, three place names and four personal/divine names. Each entry separates attested Linear B spelling, normalised Unicode glyphs, reconstructed reading, later Greek comparison and bilingual meaning. Scholarly sources are linked per entry and collected in Sources. Later headwords are distinguished from inflected Mycenaean forms. Homographic ke-ra and pa-te retain multiple readings; no automatic one-to-one translation is asserted.
+
+The starter selection draws on Del Freo's Mnamon language/script examples, Palaima on titles, Ilievski on personal names, Sproat on place-name spellings and Nagy on pu-ro. It is not an exhaustive lexicon or a substitute for DMic. Administrative individuals are not identified with epic heroes. The wa-na-ka article explains the difference between syllabic spelling and wanaks, and the loss of initial w in later Greek.
+
+Search supports unhyphenated Latin spellings, Greek with or without diacritics, final sigma and bilingual meanings. Category filters combine with search. Exact occurrences in the selected 22 tablets link to the relevant word/sign; absence from that small collection is explicitly separated from scholarly attestation elsewhere. Checks cover all encoded spellings, provenance, search normalisation, homography and exact occurrence targets. Desktop/mobile UI checks cover search, filters, empty reset and the Ta 709 occurrence link.

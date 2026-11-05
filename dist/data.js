@@ -1,6 +1,6 @@
 import {editions} from './editions.js';
-import {corpus} from './corpus.js?v=20261102-grammar';
-import {prepare} from './text.js?v=20261102-grammar';
+import {corpus} from './corpus.js?v=20261105-lexicon';
+import {prepare} from './text.js?v=20261105-lexicon';
 export const sourceURL='https://mnamon.sns.it/index.php?id=20&lang=en&page=Esempi';
 export const bibliographyURL='https://mnamon.sns.it/index.php?id=20&lang=en&page=Bibliografia';
 const legacyTablets=[
