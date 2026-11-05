@@ -1,6 +1,6 @@
-import {lexicon,lexiconSources} from './lexicon-data.js?v=20261105-lexicon';
+import {lexicon,lexiconSources} from './lexicon-data.js?v=20261105-corpus';
 import {partsOf,signInfo,normalise} from './text.js';
-import {tablets} from './data.js?v=20261105-lexicon';
+import {tablets} from './data.js?v=20261105-corpus';
 import {tabletRoute} from './reader-state.js';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const link=(url,label)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;

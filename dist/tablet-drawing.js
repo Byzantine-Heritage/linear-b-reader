@@ -3,11 +3,12 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 // Unicode normalisations, never tracings of scribal allographs. Complex and
 // ambiguous editorial codes remain in Latin rather than inventing a glyph.
 const ideograms={VIR:0x10080,MUL:0x10081,GRA:0x1008e,OLE:0x10095,AUR:0x1009b,ARM:0x100ab,ROTA:0x100cf};
-const vessels={200:0x100df,201:0x100e0,202:0x100e1,203:0x100e2,209:0x100e8,213:0x100ec,214:0x100ed,215:0x100ee,216:0x100ef,228:0x100f7};
+const vessels={200:0x100df,201:0x100e0,202:0x100e1,203:0x100e2,204:0x100e3,209:0x100e8,213:0x100ec,214:0x100ed,215:0x100ee,216:0x100ef,228:0x100f7};
 export function notationGlyph(raw){
  const clean=normalise(raw),core=clean.replace(/^[\[\]]+|[\[\]]+$/g,'');
  if(/['’]/.test(raw))return null;
- let glyph=ideograms[core]?String.fromCodePoint(ideograms[core]):null;
+ const numbered={'*220':0x100c4,'*232':0x100c8,'*234':0x100ca};
+ let glyph=numbered[core]?String.fromCodePoint(numbered[core]):ideograms[core]?String.fromCodePoint(ideograms[core]):null;
  const vessel=core.match(/^\*(\d+)VAS$/);
  if(vessel&&vessels[vessel[1]])glyph=String.fromCodePoint(vessels[vessel[1]]);
  if(/^\d{1,5}$/.test(core)&&+core>0){

@@ -85,3 +85,20 @@ The An 657 study edition reuses only its existing first-line Mnamon interpretati
 - ti-ri-po and e-ka-ra reuse the user's supplied PY Ta 709 Mnamon reading. Inflected ka-ke-u-si and po-se-da-o-ne are explicitly distinguished from later nominative dictionary headwords.
 
 Only unambiguous exact word occurrences in this site's corpus are linked automatically. A missing occurrence in the 22-tablet selection is not evidence that the form is unattested. Fragment-marked tokens and merely similar strings are not counted as exact matches.
+
+## Complete Ta-series selection — 5 November 2026
+
+Main-text tokens and archaeological metadata were read directly from the public LiBER record pages, including preserved erased text (not the critical apparatus or palimpsestic undertext). No museum images or modern translations were copied. Line labels lose only their initial formatting dot; spacing is normalised. All ten additions are Hand 2, LH III B2, according to those records. Additional findspots of joined fragments are retained.
+
+- PY Ta 707+fr. — https://liber.cnr.it/tablet/view/5346
+- PY Ta 708+fr. — https://liber.cnr.it/tablet/view/5347
+- PY Ta 710 — https://liber.cnr.it/tablet/view/5349
+- PY Ta 711 — https://liber.cnr.it/tablet/view/5350
+- PY Ta 713 — https://liber.cnr.it/tablet/view/5351
+- PY Ta 714 — https://liber.cnr.it/tablet/view/5352
+- PY Ta 715+fr. — https://liber.cnr.it/tablet/view/5353
+- PY Ta 716 — https://liber.cnr.it/tablet/view/5354
+- PY Ta 721 — https://liber.cnr.it/tablet/view/5355
+- PY Ta 722 — https://liber.cnr.it/tablet/view/5356
+
+The source list enumerates 13 edited documents: 641, 642, 707, 708, 709+712+FR., 710, 711, 713, 714, 715, 716, 721 and 722. A joined fragment number is not counted as a separate complete document. Catalogue titles are descriptive labels, not translations of the records. Unicode code points for vessel B204 and ideograms B220/B232/B234 follow https://www.unicode.org/charts/PDF/U10080.pdf; unnamed B232 and B234 retain their source identifiers rather than inferred semantic labels.

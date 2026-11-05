@@ -1,3 +1,4 @@
+import {pylosTa} from './pylos-ta.js';
 import {tiryns} from './tiryns.js';
 // Ancient text transcriptions, checked against individual LiBER document pages.
 // Spaces are normalised; punctuation, line labels and visible editorial marks are retained.
@@ -23,5 +24,5 @@ export const corpus = [
 {id:'KN-Gg-702',code:'KN Gg(1) 702',site:'KN',topic:'honey',title:{en:'Honey and the Labyrinth',ru:'Мёд и Лабиринт'},liber:4196,findspot:'(G1) Gallery of Jewel Fresco',scribe:'103',period:'LM III A2',inventory:'Herakleion M. 167',translationPage:448,pdfPage:10,quote:'to the Lady of the Labyrinth',lines:[['1','pa-si-te-o-i / me-ri *209VAS 1'],['2',"da-pu₂-ri-to-jo , / po-ti-ni-ja 'me-ri' *209VAS 1"]]},
 {id:'KN-Gg-705',code:'KN Gg(3) 705',site:'KN',topic:'honey',title:{en:'Honey at Amnisos',ru:'Мёд в Амнисе'},liber:4514,findspot:'(G1) Gallery of Jewel Fresco',scribe:'140',period:'LM III A2',inventory:'Herakleion M. 150',translationPage:448,pdfPage:10,lines:[['1',"] a-mi-ni-so , / e-re-u-ti-ja 'ME+RI' *209VAS 1"],['2',']pa-si-te-o-i ME+RI *209VAS 1'],['3',']o-ne ME+RI *209VAS 1']]},
 {id:'KH-Gq-5',code:'KH Gq 5',site:'KH',topic:'honey',title:{en:'Zeus and Dionysos',ru:'Зевс и Дионис'},liber:5720,findspot:'Agia Aikaterini square – Building 2 – Room E',scribe:'—',period:'LM III B1',inventory:'Chania M. (Exc. No. GSE 90-TC 069B)',translationPage:448,pdfPage:10,quote:'to Dionysos',lines:[['1','di-wi-jo-ḍẹ di-we ṂẸ+ṚỊ *2̣0̣9̣VAS+Ạ 1̣ ['],['2','di-wo-nu-so ṂẸ+ṚỊ [ ] 2̣ [']]}
-,...tiryns
+,...tiryns,...pylosTa
 ];

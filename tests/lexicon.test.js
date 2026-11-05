@@ -28,7 +28,7 @@ test('occurrence links use attested whole spellings and point to the right token
   assert.equal(d.entries[o.index].raw,e.spelling);
  }
  assert.ok(corpusOccurrences(lexicon.find(e=>e.id==='ti-ri-po')).some(o=>o.tablet==='PY-Ta-709'));
- assert.equal(corpusOccurrences(lexicon.find(e=>e.id==='wa-na-ka')).length,0);
+ assert.ok(corpusOccurrences(lexicon.find(e=>e.id==='wa-na-ka')).some(o=>o.tablet==='PY-Ta-711'&&o.line==='1'));
 });
 test('homography, inflection and personal identity are not flattened into certain equivalents',()=>{
  for(const id of ['ke-ra','pa-te'])assert.equal(lexicon.find(e=>e.id===id).status,'ambiguous');
